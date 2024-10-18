@@ -1,6 +1,8 @@
 bits 16
 org 0x7c00
 
+KERNEL_OFFSET equ 0x1000 ; where to load the kernel to
+
 start:
     ; setup the stack
     mov bp, 0x9000 
@@ -12,8 +14,6 @@ start:
 %include "boot/disk.asm"
 %include "boot/gdt.asm"
 %include "boot/32bit.asm"
-
-KERNEL_OFFSET equ 0x1000 ; where to load the kernel to
 
 bits 16
 load_kernel:
