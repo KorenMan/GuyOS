@@ -18,6 +18,7 @@ KERNEL_OFFSET equ 0x1000 ; where to load the kernel to
 bits 16
 load_kernel:
     mov bx, KERNEL_OFFSET ; where to store the data read from the disk 
+    mov dh, 0x10 ; number of sectors to read 
     call disk_load
     ret
 
