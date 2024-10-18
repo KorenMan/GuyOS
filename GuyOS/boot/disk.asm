@@ -1,7 +1,6 @@
 disk_load:
     pusha
-    
-    mov dh, 0x10 ; number of sectors to read  
+ 
     push dx
 
     mov ah, 0x02 ; int 0x13 "read"
